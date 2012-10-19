@@ -13,12 +13,48 @@
 <div data-role="page" id="one" data-url="one" tabindex="0" class="ui-page ui-body-e ui-page-active" data-theme="e" style="min-height:735px;"> 
 	<div data-role="content" class="ui-content" role="main">
 		<h1>Load Data Page</h1>
-		<div data-role="button" id="JSON" value="JSON">JSON</div>		
+		<div data-role="fieldcontain" style="width:45%;float:left">
+		<div data-role="button" id="JSON" value="people">People</div>	
+		<div data-role="button" id="JSONIP" value="ip">IPs</div>	
+		</div>	
+		<form action="" method="post" id="personForm" validate="true">	
+		<div style="width:45%;float:right">
+		<label for="name">Name:</label>
+		<input type="text" id="nameField" name="name" class="required"></input>
+		<label for="job">Person's Job:</label>
+		<select id="job" name="job" class="required validate" data-native-menu="true">
+		<option data-placeholder="false" value="">Select a job for this person.</option>
+		<option value="director">director</option>
+		<option value="producer">producer</option>
+		<option value="writer">writer</option>
+		<option value="editor">editor</option>
+		<option value="actor">actor</option>
+		<option value="composer">composer</option>
+		</select>
+		<label for="model">Role-model:</label>
+		<select id="model" name="model" class="required validate" data-native-menu="true">
+		<option data-placeholder="false" value="">Select a role-model for this person.</option>
+		<option value="lucas">lucas</option>
+		<option value="spielberg">spielberg</option>
+		<option value="kurasawa">kurasawa</option>
+		<option value="scorcese">scorcese</option>
+		<option value="kubrick">kubrick</option>
+		<option value="wilder">wilder</option>
+		</select>
+		<label for="age">Select this person's age:</label>
+		<input type="range" id="age" name="age" min="1" max="100" class="required"></input>
+		<input type="submit" data-icon="refresh" data-mini="true" id="submit" value="submit"></input>
+		</div>
+		</form>
+		<div data-role="fieldcontain" style="float:left">
 		<div id="targetAlpha"></div>
+		</div>
 	</div>
 	</div>
-	<script src="./js/libs/jquery-1.7.1.min.js"></script>
-	<script src="jquery-ui-1.8.23.custom.min.js"></script>
+	
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
-	<script src="load.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+	<script src="js/jquery.couch.js"></script>
+	<script src="js/main.js"></script>
 </body></html>
